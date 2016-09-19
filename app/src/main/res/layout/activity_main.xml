@@ -8,14 +8,6 @@
 
     tools:context=".MainActivity">
 
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/vertical_recycler_view"
-        android:background="#fff"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"/>
-
     <View
         android:background="#787878"
         android:layout_width="match_parent"
@@ -26,5 +18,5 @@
         android:id="@+id/horizontal_recycler_view"
         android:background="#fff"
         android:layout_width="match_parent"
-        android:layout_height="70dp"/>
+        android:layout_height="match_parent"/>
 </LinearLayout>
