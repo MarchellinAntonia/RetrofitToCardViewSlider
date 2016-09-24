@@ -22,9 +22,6 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView horizontal_recycler_view;
-    private ArrayList<String> horizontalList;
-//    private HorizontalAdapter horizontalAdapter;
     TextView data_bank_code, data_bank_name;
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -32,19 +29,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        horizontal_recycler_view= (RecyclerView) findViewById(R.id.horizontal_recycler_view);
-//
-//        horizontalList=new ArrayList<>();
-//        horizontalList.add("horizontal 1");
-//        horizontalList.add("horizontal 2");
-//        horizontalList.add("horizontal 3");
-//        horizontalList.add("horizontal 4");
-//        horizontalList.add("horizontal 5");
-//        horizontalList.add("horizontal 6");
-//        horizontalList.add("horizontal 7");
-//        horizontalList.add("horizontal 8");
-//        horizontalList.add("horizontal 9");
-//        horizontalList.add("horizontal 10");
 
         data_bank_code = (TextView) findViewById(R.id.data_bank_code);
         data_bank_name = (TextView) findViewById(R.id.data_bank_name);
@@ -59,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<Bank>() {
             @Override
             public void onResponse(Call<Bank> call, Response<Bank> response) {
-//                kodeAPI.setText(response.body().getKode());
-//                statusAPI.setText(response.body().getStatus());
                 recyclerView.setAdapter(new BanksAdapter(response.body().getDataBank(), R.layout.horizontal_item_view, getApplicationContext()));
             }
 
